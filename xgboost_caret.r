@@ -12,7 +12,7 @@ train<-read.table("train.csv",sep=',',header=T)
 
 train$id<-NULL
 
-# XGBOOST PARAM
+# XGBOOST PARAMETERS
 xgb_grid_1 = expand.grid(
   nrounds = 100,
   eta = c(0.01,0.05,0.1),
@@ -35,6 +35,7 @@ xgb_trcontrol_1 = trainControl(
   allowParallel = TRUE
 )
 
+# DEFINE MODEL
 train$target<-ifelse(train$target==1,'event','no event')
 formula="..."
 
